@@ -1,7 +1,7 @@
 {
   "name": "マイPWAサンプルアプリ",
   "short_name": "マイPWA",
-  "start_url": "index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f0f0f0",
   "theme_color": "#007bff",
