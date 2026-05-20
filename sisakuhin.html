@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>マイPWAアプリ</title>
-    <!-- ① PWAの設定ファイルを読み込む -->
-    <link rel="manifest" href="manifest.json">
+    <!-- ① manifest.jsonの前に「./」をつける -->
+    <link rel="manifest" href="./manifest.json">
     <style>
         body { font-family: sans-serif; text-align: center; padding-top: 50px; background-color: #f0f0f0; }
         .btn { padding: 10px 20px; font-size: 18px; background: #007bff; color: white; border: none; border-radius: 5px; }
@@ -17,9 +17,10 @@
     <button class="btn" onclick="alert('動いた！')">ボタンを押してね</button>
 
     <script>
-        // ② 裏方のService Workerを登録するスクリプト
+        // ② Service Workerのパスの前に「./」をつける
+        // ※実際のファイル名が sw.js の場合は、ここを './sw.js' にしてください
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js')
+            navigator.serviceWorker.register('./service-worker.js')
                 .then(() => console.log('PWA準備完了！'))
                 .catch(err => console.error('エラー:', err));
         }
