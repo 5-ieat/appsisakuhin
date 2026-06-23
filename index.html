@@ -2,26 +2,32 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>マイPWAアプリ</title>
     <!-- ① パスの先頭に「./」を追加 -->
     <link rel="manifest" href="./manifest.json">
     <style>
-        body { font-family: sans-serif; text-align: center; padding-top: 50px; background-color: #f0f0f0; }
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; background-color: #f0f0f0; margin: 0; }
         .btn { padding: 10px 20px; font-size: 18px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
-        iframe { display: block; margin: 20px auto; max-width: 100%; }
+        /* 各プレイヤーを見やすく中央に配置し、横幅からはみ出さないように調整 */
+        iframe { display: block; margin: 20px auto; max-width: 90%; border: none; }
     </style>
 </head>
 <body>
     <h1>My First PWA!</h1>
     <p>これはSafariの枠なしで動くアプリです。</p>
     <button class="btn" onclick="alert('動いた！')">ボタンを押してね</button>
-    <iframe width="110" height="200" src="https://www.myinstants.com/instant/waho-77100/embed/" frameborder="0" scrolling="no"></iframe>
-    <iframe width="640" height="360" src="https://youtube.com" frameborder="0" allowfullscreen></iframe>
-    <iframe width="312" height="176" src="https://nicovideo.jp" scrolling="no" style="border:solid 1px #ccc;" frameborder="0">
+    
+    <!-- Myinstants（効果音ボタン） -->
+    <iframe width="110" height="200" src="https://myinstants.com" scrolling="no"></iframe>
+    
+    <!-- YouTube（?playsinline=1 を追加してiPhoneでの勝手な全画面化を防止） -->
+    <iframe width="640" height="360" src="https://youtube.com" allowfullscreen></iframe>
+    
+    <!-- ニコニコ動画（サムネイルプレイヤー形式） -->
+    <iframe width="312" height="176" src="https://nicovideo.jp" scrolling="no" style="border:solid 1px #ccc;">
         <a href="https://nicovideo.jp">笑いこらえない先輩BB+使用例</a>
     </iframe>
-    
 
     <script>
         // ② パスの先頭に「./」を追加し、ファイル名を統一
